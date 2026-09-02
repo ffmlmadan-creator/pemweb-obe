@@ -1,21 +1,23 @@
-# Praktikum Pemrograman Web - OBE
+# Sistem Monitoring Tambak Pesisir Tarakan
 
-## Identitas Mahasiswa
-- **Nama**: Rizki Ramadhan
-- **NPM**: 2440304010
-- **Mata Kuliah**: Pemrograman Web (26TJ453127)
-- **Program Studi**: Teknik Komputer
+Proyek praktikum Pemrograman Web (Pertemuan 2) - Teknik Komputer, Universitas Borneo Tarakan.
 
-## Deskripsi Singkat Proyek
-Inisialisasi lingkungan kerja (*environment*) praktikum pemrograman web menggunakan Laragon 5 dengan Apache web server dan PHP 8.4, serta integrasi *version control* menggunakan Git dan GitHub.
+## Deskripsi Proyek
+Website ini adalah halaman awal untuk sistem pemantauan kondisi air tambak udang windu di Juata Laut, Tarakan. Berisi data sensor (pH, suhu, salinitas), panduan budidaya saat pasang surut, dan form laporan kendala tambak.
 
-## Teknologi yang Digunakan
-- Web Server: Apache 2.4 (Laragon 5)
-- Bahasa/Markup: PHP 8.4 & HTML5
-- Version Control: Git & GitHub
+## Cara Menjalankan
+1. Nyalakan Apache di Laragon (klik Start All).
+2. Pastikan folder proyek berada di `C:\laragon\www\pemweb-obe`.
+3. Buka browser dan buka: `http://localhost/pemweb-obe/`
 
-## Cara Menjalankan Proyek
-1. Buka aplikasi **Laragon 5**.
-2. Klik tombol **Start All** untuk mengaktifkan web server Apache.
-3. Pastikan direktori proyek berada di: `D:\laragon\www\pemweb-obe`
-4. Buka browser dan akses melalui URL lokal: `http://localhost/pemweb-obe/`
+## Fitur Selesai (Milestone 2)
+- Struktur HTML5 semantik (header, nav, main, section, article, footer).
+- Hierarki heading teratur (h1, h2, h3).
+- Gambar informatif dan dekoratif dengan alt text.
+- Form laporan kendala lengkap dengan label terhubung.
+- Uji navigasi keyboard dengan tombol Tab.
+
+## AI Usage Log
+- Alat: Gemini AI
+- Penggunaan: Diskusi konsep semantik HTML5 dan aturan aksesibilitas form.
+- Verifikasi: Kode ditulis, diuji mandiri di Laragon localhost, dan dites navigasi keyboard oleh mahasiswa.

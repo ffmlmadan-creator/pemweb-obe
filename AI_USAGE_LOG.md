@@ -1,22 +1,19 @@
-# AI Usage Log - Praktikum Pemrograman Web
+## AI Usage Log
 
-## 1. Identitas Repositori & Alat
-- **Repositori**: `https://github.com/ffmlmadan-creator/pemweb-obe`
-- **Tool AI**: Large Language Model (Asisten AI)
-- **Tujuan Penggunaan**: Konsultasi teknis, pemecahan kendala lingkungan (*troubleshooting environment*), dan standarisasi format dokumentasi Markdown.
+Sesuai dengan prinsip etika akademik dan ketentuan kurikulum OBE pada mata kuliah Pemrograman Web, berikut adalah catatan transparansi penggunaan Artificial Intelligence (AI) dalam praktikum Pertemuan 2:
 
----
+* **Alat AI:** Gemini AI
+* **Peran:** Asisten belajar mandiri / teman diskusi konsep (bukan pengerjaan otomatis/joki).
 
-## 2. Rincian Log Penggunaan AI
+### Rincian Topik yang Didiskusikan:
+1. **Atribut Bahasa Dokumen (`lang="id"`):**
+   * *Pertanyaan:* Memahami fungsi atribut `lang="id"`, konsekuensinya terhadap aksesibilitas/pembaca layar (*screen reader*), serta cara menangani kata bahasa Inggris di dalam dokumen bahasa Indonesia menggunakan `lang="en"`.
+2. **Perbedaan Tag `<head>` dan `<header>`:**
+   * *Pertanyaan:* Mengklarifikasi perbedaan mendasar antara tag `<head>` (tempat metadata di balik layar) dan tag `<header>` (elemen semantik visual di dalam `<body>`).
+3. **Konsep Version Control & Branching Git:**
+   * *Pertanyaan:* Memahami mengapa branch lokal baru (`feature/struktur-home`) tidak langsung muncul di web GitHub sebelum dilakukan perintah `git push`.
 
-| No | Aktivitas / Kebutuhan | Kueri / Topik Konsultasi | Output / Bantuan AI | Verifikasi & Implementasi Mandiri |
-| :--- | :--- | :--- | :--- | :--- |
-| 1 | **Analisis Network Tab** | Penjelasan parameter HTTP (Status code, Content-Type, dan MIME types). | Penjelasan teoretis mengenai fungsi resource web pada situs publik. | Melakukan inspeksi mandiri via DevTools Network tab pada situs `smamuh.sch.id` dan mencatat 5 request nyata. |
-| 2 | **Format Dokumentasi** | Contoh struktur tabel Markdown untuk laporan teknis. | Template tabel Markdown standar. | Mengisi data teknis hasil analisis lapangan ke dalam struktur tabel. |
-| 3 | **Konfigurasi Server Lokal** | Rekomendasi pengelolaan dependensi Apache dan PHP pada server lokal. | Penjelasan alur kerja web server dan panduan pengaturan port/ekstensi. | Mengonfigurasi lingkungan Laragon dan memverifikasi akses `localhost/pemweb-obe/` secara mandiri. |
-| 4 | **Version Control (Git)** | Praktik terbaik alur kerja Git commit dan sinkronisasi cabang remote. | Format pesan commit standar (*Conventional Commits*) dan panduan sinkronisasi. | Mengeksekusi perintah Git dari terminal lokal dan mempublikasikan repositori ke GitHub. |
-
----
-
-## 3. Deklarasi Integritas Akademik
-Penggunaan AI dalam tugas ini difokuskan sebagai akselerator belajar dan alat bantu pemecahan masalah teknis. Seluruh data analisis, kode dasar HTML, pengujian server lokal, serta pengelolaan repositori Git telah diverifikasi, dijalankan, dan dipahami sepenuhnya oleh mahasiswa.
+### Verifikasi Mandiri oleh Mahasiswa:
+* **Penulisan Kode:** Mahasiswa menyusun dan menyunting file `index.html` sendiri pada VS Code, termasuk menghubungkan file gambar lokal (`images.jpg` dan `images (1).jpg`).
+* **Pengujian Server Lokal:** Halaman web dijalankan dan diverifikasi melalui Apache Laragon di URL `http://localhost/pemweb-obe/`.
+* **Uji Aksesibilitas:** Mahasiswa menguji langsung navigasi keyboard menggunakan tombol **Tab** dan **Enter** pada peramban secara mandiri.
