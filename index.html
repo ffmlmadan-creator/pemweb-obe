@@ -1,11 +1,87 @@
-<!doctype html> 
-<html lang="id"> 
-<head> 
-<meta charset="utf-8"> 
-<meta name="viewport" content="width=device-width, initial-scale=1"> 
-<title>Praktikum Pemrograman Web</title> 
-</head> 
-<body> 
-<h1>Praktikum Pemrograman Web</h1> 
-<p>Repository awal OBE.</p> 
-</body> 
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sistem Monitoring Kualitas Air Tambak Pesisir Tarakan">
+<title>Sistem Monitoring Tambak Pesisir Tarakan</title>
+</head>
+<body>
+
+<a href="#main">Lewati ke konten utama</a>
+
+<header>
+    <img src="images.jpg" alt="" width="120">
+    <h1>Sistem Monitoring Tambak Pesisir Tarakan</h1>
+    <p>Platform pemantauan telemetri kualitas air tambak udang windu di wilayah Juata Laut.</p>
+    <nav aria-label="Navigasi Utama">
+    <ul>
+        <li><a href="#data">Kondisi Air</a></li>
+        <li><a href="#panduan">Panduan Budidaya</a></li>
+        <li><a href="#lapor">Lapor Kendala</a></li>
+    </ul>
+    </nav>
+</header>
+
+<main id="main">
+    <section id="data">
+    <h2>Kondisi Air Tambak Juata Laut</h2>
+    
+    <figure>
+        <img src="images (1).jpg" 
+            alt="Kondisi tambak udang windu tradisional dengan air jernih di kawasan pesisir Juata Tarakan" 
+            width="450">
+        <figcaption>Kondisi tambak pembesaran udang windu di Juata Laut.</figcaption>
+    </figure>
+
+    <article>
+        <h3>Status Sensor Keasaman dan Suhu</h3>
+        <p>Nilai derajat keasaman air berada pada angka pH 7.8 dan suhu air 29°C dalam kondisi normal.</p>
+    </article>
+    <article>
+        <h3>Status Salinitas dan Oksigen Terlarut</h3>
+        <p>Kadar salinitas terukur 22 ppt dan kadar oksigen terlarut stabil pada 6.2 mg/L.</p>
+    </article>
+    </section>
+
+    <section id="panduan">
+    <h2>Panduan Budidaya Udang Windu</h2>
+    <article>
+        <h3>Mitigasi Pasang Surut Air Laut</h3>
+        <p>Petambak dianjurkan membuka pintu sirkulasi air secara teratur saat siklus pasang tertinggi.</p>
+    </article>
+    <article>
+        <h3>Pencegahan Amonia Dasar Kolam</h3>
+        <p>Lakukan pembuangan lumpur dasar tambak minimal satu kali dalam dua pekan masa pemeliharaan.</p>
+    </article>
+    </section>
+
+    <section id="lapor">
+    <h2>Form Laporan Kendala Tambak</h2>
+    <form action="#" method="post">
+        <div>
+        <label for="nama">Nama Lengkap:</label><br>
+        <input type="text" id="nama" name="nama" required>
+        </div>
+        <br>
+        <div>
+        <label for="email">Alamat Email:</label><br>
+        <input type="email" id="email" name="email" required>
+        </div>
+        <br>
+        <div>
+        <label for="laporan">Laporan Kendala Tambak:</label><br>
+        <textarea id="laporan" name="laporan" rows="4" cols="40" required></textarea>
+        </div>
+        <br>
+        <button type="submit">Kirim Laporan</button>
+    </form>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 Sistem Monitoring Tambak Pesisir - Teknik Komputer Universitas Borneo Tarakan.</p>
+</footer>
+
+</body>
+</html>
