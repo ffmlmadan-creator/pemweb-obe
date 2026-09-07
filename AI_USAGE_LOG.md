@@ -1,19 +1,10 @@
-## AI Usage Log
+## AI Usage Log (Catatan Penggunaan AI)
 
-Sesuai dengan prinsip etika akademik dan ketentuan kurikulum OBE pada mata kuliah Pemrograman Web, berikut adalah catatan transparansi penggunaan Artificial Intelligence (AI) dalam praktikum Pertemuan 2:
+Penggunaan kecerdasan buatan (Artificial Intelligence) pada modul ini difokuskan sebagai sarana diskusi pemahaman konsep, validasi standar aksesibilitas, serta panduan pemecahan kendala teknis Git. Seluruh implementasi kode, pengujian, dan penyesuaian dilakukan secara mandiri.
 
-* **Alat AI:** Gemini AI
-* **Peran:** Asisten belajar mandiri / teman diskusi konsep (bukan pengerjaan otomatis/joki).
-
-### Rincian Topik yang Didiskusikan:
-1. **Atribut Bahasa Dokumen (`lang="id"`):**
-   * *Pertanyaan:* Memahami fungsi atribut `lang="id"`, konsekuensinya terhadap aksesibilitas/pembaca layar (*screen reader*), serta cara menangani kata bahasa Inggris di dalam dokumen bahasa Indonesia menggunakan `lang="en"`.
-2. **Perbedaan Tag `<head>` dan `<header>`:**
-   * *Pertanyaan:* Mengklarifikasi perbedaan mendasar antara tag `<head>` (tempat metadata di balik layar) dan tag `<header>` (elemen semantik visual di dalam `<body>`).
-3. **Konsep Version Control & Branching Git:**
-   * *Pertanyaan:* Memahami mengapa branch lokal baru (`feature/struktur-home`) tidak langsung muncul di web GitHub sebelum dilakukan perintah `git push`.
-
-### Verifikasi Mandiri oleh Mahasiswa:
-* **Penulisan Kode:** Mahasiswa menyusun dan menyunting file `index.html` sendiri pada VS Code, termasuk menghubungkan file gambar lokal (`images.jpg` dan `images (1).jpg`).
-* **Pengujian Server Lokal:** Halaman web dijalankan dan diverifikasi melalui Apache Laragon di URL `http://localhost/pemweb-obe/`.
-* **Uji Aksesibilitas:** Mahasiswa menguji langsung navigasi keyboard menggunakan tombol **Tab** dan **Enter** pada peramban secara mandiri.
+| No | Tanggal | Topik / Fokus Diskusi | Bentuk Interaksi / Pertanyaan | Verifikasi & Implementasi Mandiri |
+| :---: | :---: | :--- | :--- | :--- |
+| 1 | 2026-09-07 | **Konsep Git Branching** | Mendiskusikan fungsi dan alur kerja pembuatan percabangan (*branch*) terisolasi sebelum digabungkan (*merge*) ke branch utama. | Menguji perintah `git checkout -b` secara langsung di terminal dan memeriksa pergerakan branch via `git branch`. |
+| 2 | 2026-09-07 | **Standar Aksesibilitas Web (WCAG)** | Mengklarifikasi kriteria aksesibilitas dasar (pengaruh atribut `lang="id"`, hierarki heading yang runtut, dan asosiasi `label` dengan `input`). | Memeriksa seluruh elemen form pada kode secara manual, menguji klik label untuk memastikan kursor fokus ke input, serta menguji navigasi tombol `Tab`. |
+| 3 | 2026-09-07 | **Troubleshooting Alur Git** | Menganalisis penyebab error saat berpindah branch dengan status *staged changes* dan solusi pengembalian commit ke branch yang tepat. | Mengeksekusi langkah perbaikan di terminal lokal, memastikan perubahan tersimpan di branch `feature/struktur-home`, dan memeriksa riwayat log commit. |
+| 4 | 2026-09-07 | **Struktur Informasi (Sitemap)** | Berkonsultasi mengenai hierarki penyusunan halaman layanan publik kampus yang logis dan efisien. | Menyusun dan merealisasikan diagram sitemap secara mandiri pada tools desain (Figma) sesuai kasus SIPERKA. |
