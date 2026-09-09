@@ -1,86 +1,151 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Sistem Monitoring Kualitas Air Tambak Pesisir Tarakan">
-<title>Sistem Monitoring Tambak Pesisir Tarakan</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Sistem Pelaporan Kerusakan Fasilitas Kampus Universitas Borneo Tarakan untuk mendukung pemeliharaan sarana dan prasarana akademik.">
+<title>SIPERKA - Sistem Pelaporan Kerusakan Kampus</title>
 </head>
 <body>
 
-<a href="#main">Lewati ke konten utama</a>
-
 <header>
-    <img src="images.jpg" alt="" width="120">
-    <h1>Sistem Monitoring Tambak Pesisir Tarakan</h1>
-    <p>Platform pemantauan telemetri kualitas air tambak udang windu di wilayah Juata Laut.</p>
+    <a href="#konten-utama">Lewati ke konten utama</a>
+    <h1>SIPERKA: Sistem Pelaporan Kerusakan Fasilitas Kampus</h1>
+    <p>Layanan terpadu pelaporan sarana dan prasarana Universitas Borneo Tarakan.</p>
+
     <nav aria-label="Navigasi Utama">
     <ul>
-        <li><a href="#data">Kondisi Air</a></li>
-        <li><a href="#panduan">Panduan Budidaya</a></li>
-        <li><a href="#lapor">Lapor Kendala</a></li>
+        <li><a href="#alur-layanan">Alur Layanan</a></li>
+        <li><a href="#form-lapor">Formulir Lapor</a></li>
+        <li><a href="#bantuan">Pusat Bantuan</a></li>
     </ul>
     </nav>
 </header>
 
-<main id="main">
-    <section id="data">
-    <h2>Kondisi Air Tambak Juata Laut</h2>
-    
+<main id="konten-utama">
+
+    <!-- Section 1: Alur Layanan & Informasi -->
+    <section id="alur-layanan">
+    <h2>Alur Penanganan dan Kategori Fasilitas</h2>
+    <p>Layanan ini memfasilitasi mahasiswaa
+    , dosen, dan staf untuk melaporkan fasilitas gedung, laboratorium, maupun area terbuka yang membutuhkan perbaikan cepat.</p>
+
     <figure>
-        <img src="images (1).jpg" 
-            alt="Kondisi tambak udang windu tradisional dengan air jernih di kawasan pesisir Juata Tarakan" 
-            width="450">
-        <figcaption>Kondisi tambak pembesaran udang windu di Juata Laut.</figcaption>
+        <img src="assets/images.jpg" alt="Gedung perkuliahan kampus Universitas Borneo Tarakan" width="600" height="300">
     </figure>
 
     <article>
-        <h3>Status Sensor Keasaman dan Suhu</h3>
-        <p>Nilai derajat keasaman air berada pada angka pH 7.8 dan suhu air 29°C dalam kondisi normal.</p>
+        <h3>Tahapan Penanganan Aduan Kerusakan</h3>
+        <ol>
+        <li><strong>Pelaporan Mandiri:</strong> Pengguna mengisi formulir data kerusakan beserta lokasi detail.</li>
+        <li><strong>Verifikasi Unit Kerja:</strong> Tim Sarana dan Prasarana melakukan verifikasi fisik dalam 1x24 jam kerja.</li>
+        <li><strong>Tindakan Perbaikan:</strong> Teknisi menangani kerusakan berdasarkan tingkat urgensi.</li>
+        <li><strong>Penyelesaian:</strong> Status pembaruan dikonfirmasi kepada pelapor melalui email.</li>
+        </ol>
     </article>
+
     <article>
-        <h3>Status Salinitas dan Oksigen Terlarut</h3>
-        <p>Kadar salinitas terukur 22 ppt dan kadar oksigen terlarut stabil pada 6.2 mg/L.</p>
+        <h3>Ruang Lingkup Fasilitas yang Ditangani</h3>
+        <ul>
+        <li><strong>Fasilitas Ruang Kuliah:</strong> Pendingin ruangan (AC), proyektor, kursi perkuliahan, dan papan tulis.</li>
+        <li><strong>Infrastruktur Laboratorium:</strong> Kelistrikan, instalasi jaringan komputer, dan stopkontak.</li>
+        <li><strong>Fasilitas Umum & Sanitasi:</strong> Pintu, toilet, kran air, lampu lorong, dan area parkir.</li>
+        </ul>
     </article>
     </section>
 
-    <section id="panduan">
-    <h2>Panduan Budidaya Udang Windu</h2>
-    <article>
-        <h3>Mitigasi Pasang Surut Air Laut</h3>
-        <p>Petambak dianjurkan membuka pintu sirkulasi air secara teratur saat siklus pasang tertinggi.</p>
-    </article>
-    <article>
-        <h3>Pencegahan Amonia Dasar Kolam</h3>
-        <p>Lakukan pembuangan lumpur dasar tambak minimal satu kali dalam dua pekan masa pemeliharaan.</p>
-    </article>
-    </section>
+    <!-- Section 2: Form Pelaporan -->
+    <section id="form-lapor">
+    <h2>Formulir Pelaporan Kerusakan Fasilitas</h2>
+    <p>Lengkapi data di bawah ini dengan valid agar tim teknisi dapat menemukan dan menindaklanjuti lokasi kerusakan secara presisi.</p>
 
-    <section id="lapor">
-    <h2>Form Laporan Kendala Tambak</h2>
     <form action="#" method="post">
-        <div>
-        <label for="nama">Nama Lengkap:</label><br>
-        <input type="text" id="nama" name="nama" required>
-        </div>
-        <br>
-        <div>
-        <label for="email">Alamat Email:</label><br>
-        <input type="email" id="email" name="email" required>
-        </div>
-        <br>
-        <div>
-        <label for="laporan">Laporan Kendala Tambak:</label><br>
-        <textarea id="laporan" name="laporan" rows="4" cols="40" required></textarea>
-        </div>
-        <br>
-        <button type="submit">Kirim Laporan</button>
+        <fieldset>
+        <legend>Identitas Pelapor</legend>
+
+        <p>
+            <label for="nama-pelapor">Nama Lengkap:</label><br>
+            <input type="text" id="nama-pelapor" name="nama_pelapor" placeholder="Contoh: Rizki Ramadhan" required>
+        </p>
+
+        <p>
+            <label for="identitas-nomor">NPM: </label><br>
+            <input type="text" id="identitas-nomor" name="identitas_nomor" required>
+        </p>
+
+        <p>
+            <label for="email-pelapor">Email:</label><br>
+            <input type="email" id="email-pelapor" name="email_pelapor" required>
+        </p>
+        </fieldset>
+
+        <fieldset>
+        <legend>Detail Kerusakan Fasilitas</legend>
+
+        <p>
+            <label for="kategori-fasilitas">Kategori Kerusakan:</label><br>
+            <select id="kategori-fasilitas" name="kategori_fasilitas" required>
+            <option value="">-- Pilih Kategori --</option>
+            <option value="kelistrikan">Kelistrikan & Penerangan</option>
+            <option value="elektronik">Peralatan Elektronik (AC / Proyektor)</option>
+            <option value="furnitur">Furnitur (Meja / Kursi / Lemari)</option>
+            <option value="sanitasi">Sanitasi & Plumbing (Toilet / Air)</option>
+            <option value="jaringan">Infrastruktur Komputer / Jaringan</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="lokasi-gedung">Lokasi Fasilitas (Gedung / Lantai / Ruangan):</label><br>
+            <input type="text" id="lokasi-gedung" name="lokasi_gedung" placeholder="Contoh: Gedung SBSN, Lab Komputer 1" required>
+        </p>
+
+        <p>
+            <label for="tanggal-ditemukan">Tanggal Ditemukan Kerusakan:</label><br>
+            <input type="date" id="tanggal-ditemukan" name="tanggal_ditemukan" required>
+        </p>
+
+        <p>
+            <label for="tingkat-urgensi">Tingkat Urgensi Kerusakan:</label><br>
+            <select id="tingkat-urgensi" name="tingkat_urgensi" required>
+            <option value="rendah">Rendah (Kerusakan minor, tidak mengganggu KBM)</option>
+            <option value="sedang">Sedang (Sebagian aktivitas terhambat)</option>
+            <option value="tinggi">Tinggi (Kritis, ruang/alat tidak dapat digunakan)</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="deskripsi-laporan">Uraian Masalah dan Ciri Kerusakan:</label><br>
+            <textarea id="deskripsi-laporan" name="deskripsi_laporan" rows="5" cols="45" placeholder="Jelaskan kondisi alat/fasilitas dan gejala yang teramati..." required></textarea>
+        </p>
+        </fieldset>
+
+        <p>
+        <button type="submit">Kirim Laporan Kerusakan</button>
+        <button type="reset">Batal / Reset Form</button>
+        </p>
     </form>
     </section>
+
+    <!-- Section 3: Pusat Bantuan & Kontak -->
+    <section id="bantuan">
+    <h2>Pusat Bantuan & Kontak Unit Sarpras</h2>
+    <p>Jika menemukan kondisi darurat (kebocoran gas lab, korsleting listrik, atau genangan air pipa jebol), segera hubungi posko darurat:</p>
+    
+    <address>
+        <strong>Sub-Bagian Rumah Tangga dan Sarana Prasarana (Sarpras)</strong><br>
+        Gedung Rektorat Lantai 1, Kampus Universitas Borneo Tarakan<br>
+        Jl. Amal Lama No. 1, Kota Tarakan, Kalimantan Utara<br>
+        Telepon Layanan Darurat: (0551) 2052555<br>
+        Email Layanan: sarpras@borneo.ac.id
+    </address>
+    </section>
+
 </main>
 
+<!-- Footer -->
 <footer>
-    <p>&copy; 2026 Sistem Monitoring Tambak Pesisir - Teknik Komputer Universitas Borneo Tarakan.</p>
+    <hr>
+    <p>&copy; 2026 SIPERKA - Proyek Individu Praktikum Pemrograman Web (OBE). Jurusan Teknik Komputer, Fakultas Teknik, Universitas Borneo Tarakan.</p>
 </footer>
 
 </body>
