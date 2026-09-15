@@ -33,46 +33,55 @@
 
 <main id="konten-utama" class="container">
 
+    <section class="hero-showcase">
+    <div class="hero-text">
+        <h2 class="hero-heading">Layanan Cepat Tanggap Sarpras UBT</h2>
+        <p class="hero-desc">Platform digital terpadu sivitas akademika Universitas Borneo Tarakan untuk melaporkan sarana dan prasarana kampus yang membutuhkan perbaikan.</p>
+        <a href="#form-lapor" class="btn btn-primary">Kirim Laporan Kerusakan</a>
+    </div>
+    <figure class="hero-media-box">
+        <img src="Kampus-UBT-Pantai-Amal-17062026.webp" alt="Gedung Kampus Universitas Borneo Tarakan" class="hero-img">
+    </figure>
+    </section>
+
     <section id="alur-layanan" class="section-block">
     <div class="section-header">
-        <h2>Alur Penanganan dan Kategori Fasilitas</h2>
-        <p>Layanan ini memfasilitasi mahasiswa, dosen, dan staf untuk melaporkan fasilitas gedung, laboratorium, maupun area terbuka yang membutuhkan perbaikan cepat.</p>
+        <h2>Alur Penanganan dan Fasilitas</h2>
+        <p>Prosedur standar penanganan kerusakan sarana prasarana penunjang kegiatan perkuliahan dan laboratorium.</p>
     </div>
-
-    <figure class="hero-media">
-        <img src="Kampus-UBT-Pantai-Amal-17062026.webp" alt="Gedung perkuliahan kampus Universitas Borneo Tarakan" width="600" height="300">
-    </figure>
 
     <div class="cards-grid">
         <article class="card">
-        <h3>Tahapan Penanganan Aduan Kerusakan</h3>
+        <h3>Tahapan Penanganan Aduan</h3>
         <ol>
             <li><strong>Pelaporan Mandiri:</strong> Pengguna mengisi formulir data kerusakan beserta lokasi detail.</li>
-            <li><strong>Verifikasi Unit Kerja:</strong> Tim Sarana dan Prasarana melakukan verifikasi fisik dalam 1x24 jam kerja.</li>
+            <li><strong>Verifikasi Unit Kerja:</strong> Tim Sarpras melakukan inspeksi fisik 1x24 jam kerja.</li>
             <li><strong>Tindakan Perbaikan:</strong> Teknisi menangani kerusakan berdasarkan tingkat urgensi.</li>
             <li><strong>Penyelesaian:</strong> Status pembaruan dikonfirmasi kepada pelapor melalui email.</li>
         </ol>
         </article>
 
         <article class="card">
-        <h3>Ruang Lingkup Fasilitas yang Ditangani</h3>
+        <h3>Ruang Lingkup Fasilitas</h3>
         <ul>
-            <li><strong>Fasilitas Ruang Kuliah:</strong> Pendingin ruangan (AC), proyektor, kursi perkuliahan, dan papan tulis.</li>
-            <li><strong>Infrastruktur Laboratorium:</strong> Kelistrikan, instalasi jaringan komputer, dan stopkontak.</li>
-            <li><strong>Fasilitas Umum & Sanitasi:</strong> Pintu, toilet, kran air, lampu lorong, dan area parkir.</li>
+            <li><strong>Ruang Kuliah:</strong> AC, LCD proyektor, kursi perkuliahan, dan papan tulis.</li>
+            <li><strong>Laboratorium:</strong> Kelistrikan mesin, jalur kabel LAN, dan stopkontak praktikum.</li>
+            <li><strong>Sanitasi & Umum:</strong> Kran air, pintu kamar mandi, wastafel, dan lampu koridor.</li>
         </ul>
         </article>
 
         <article class="card">
         <h3>Prioritas Tanggap Darurat</h3>
-        <p>Laporan yang berkaitan dengan risiko keselamatan seperti kebocoran bahan laboratorium dan korsleting gardu listrik akan ditangani dalam waktu kurang dari 2 jam kerja.</p>
+        <p>Laporan yang berkaitan dengan risiko keselamatan seperti kebocoran gas lab dan korsleting gardu listrik akan ditangani dalam waktu kurang dari 2 jam kerja.</p>
         </article>
     </div>
     </section>
 
     <section id="form-lapor" class="section-block form-section">
-    <h2>Formulir Pelaporan Kerusakan Fasilitas</h2>
-    <p>Lengkapi data di bawah ini dengan valid agar tim teknisi dapat menemukan dan menindaklanjuti lokasi kerusakan secara presisi.</p>
+    <div class="section-header">
+        <h2>Formulir Pelaporan Kerusakan Fasilitas</h2>
+        <p>Lengkapi formulir berikut secara valid agar teknisi dapat meninjau lokasi dengan tepat.</p>
+    </div>
 
     <form action="#" method="post" enctype="multipart/form-data" class="lapor-form">
         <fieldset>
@@ -113,14 +122,14 @@
             <div class="form-group">
             <label for="tingkat-urgensi">Tingkat Urgensi Kerusakan:</label>
             <select id="tingkat-urgensi" name="tingkat_urgensi" required>
-                <option value="rendah">Rendah (Kerusakan minor, tidak mengganggu KBM)</option>
-                <option value="sedang">Sedang (Sebagian aktivitas terhambat)</option>
-                <option value="tinggi">Tinggi (Kritis, ruang/alat tidak dapat digunakan)</option>
+                <option value="rendah">Rendah (Kerusakan minor, KBM tetap jalan)</option>
+                <option value="sedang">Sedang (Sebagian aktivitas perkuliahan terhambat)</option>
+                <option value="tinggi">Tinggi (Kritis, fasilitas tidak dapat dipakai)</option>
             </select>
             </div>
 
             <div class="form-group">
-            <label for="lokasi-gedung">Lokasi Fasilitas (Gedung / Lantai / Ruangan):</label>
+            <label for="lokasi-gedung">Lokasi Fasilitas (Gedung / Lantai / Ruang):</label>
             <input type="text" id="lokasi-gedung" name="lokasi_gedung" placeholder="Contoh: Gedung SBSN, Lab Komputer 1" required>
             </div>
 
@@ -130,14 +139,14 @@
             </div>
 
             <div class="form-group form-span-full">
-            <label for="bukti-kerusakan">Unggah Foto / Video Bukti Kerusakan:</label>
+            <label for="bukti-kerusakan">Unggah Bukti Foto / Video Kerusakan:</label>
             <input type="file" id="bukti-kerusakan" name="bukti_kerusakan" accept="image/*,video/*" aria-describedby="petunjuk-file">
-            <small id="petunjuk-file" class="form-help">Format yang didukung: Foto (JPG, PNG, WebP) atau Video singkat (MP4, MOV). Maksimal 20 MB.</small>
+            <small id="petunjuk-file" class="form-help">Format: Foto (JPG, PNG, WebP) atau Video (MP4, MOV). Maksimal 20 MB.</small>
             </div>
 
             <div class="form-group form-span-full">
             <label for="deskripsi-laporan">Uraian Masalah dan Ciri Kerusakan:</label>
-            <textarea id="deskripsi-laporan" name="deskripsi_laporan" rows="4" placeholder="Jelaskan kondisi alat/fasilitas dan gejala yang teramati..." required></textarea>
+            <textarea id="deskripsi-laporan" name="deskripsi_laporan" rows="4" placeholder="Jelaskan kondisi alat dan ciri kerusakan yang teramati..." required></textarea>
             </div>
         </div>
         </fieldset>
@@ -150,15 +159,17 @@
     </section>
 
     <section id="bantuan" class="section-block assistance-section">
-    <h2>Pusat Bantuan & Kontak Unit Sarpras</h2>
-    <p>Jika menemukan kondisi darurat (kebocoran gas lab, korsleting listrik, atau genangan air pipa jebol), segera hubungi posko darurat:</p>
+    <div class="section-header">
+        <h2>Pusat Bantuan & Kontak Unit Sarpras</h2>
+        <p>Hubungi kontak resmi berikut apabila Anda menemukan kondisi bahaya darurat di lingkungan kampus:</p>
+    </div>
     
     <address class="contact-box">
-        <strong>Sub-Bagian Rumah Tangga dan Sarana Prasarana (Sarpras)</strong><br>
+        <strong>Sub-Bagian Rumah Tangga dan Sarana Prasarana (Sarpras) UBT</strong><br>
         Gedung Rektorat Lantai 1, Kampus Universitas Borneo Tarakan<br>
         Jl. Amal Lama No. 1, Kota Tarakan, Kalimantan Utara<br>
-        <span>Telepon Layanan Darurat: <strong>(0551) 2052555</strong></span><br>
-        <span>Email Layanan: <a href="mailto:sarpras@borneo.ac.id">sarpras@borneo.ac.id</a></span>
+        <span>Telepon Darurat: <strong>(0551) 2052555</strong></span><br>
+        <span>Email: <a href="mailto:sarpras@borneo.ac.id">sarpras@borneo.ac.id</a></span>
     </address>
     </section>
 
