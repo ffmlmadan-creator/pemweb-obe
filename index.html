@@ -5,147 +5,169 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Sistem Pelaporan Kerusakan Fasilitas Kampus Universitas Borneo Tarakan untuk mendukung pemeliharaan sarana dan prasarana akademik.">
 <title>SIPERKA - Sistem Pelaporan Kerusakan Kampus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<header>
-    <a href="#konten-utama">Lewati ke konten utama</a>
-    <h1>SIPERKA: Sistem Pelaporan Kerusakan Fasilitas Kampus</h1>
-    <p>Layanan terpadu pelaporan sarana dan prasarana Universitas Borneo Tarakan.</p>
+<a href="#konten-utama" class="skip-link">Lewati ke konten utama</a>
 
-    <nav aria-label="Navigasi Utama">
-    <ul>
+<header class="site-header">
+    <div class="container header-container">
+    <div class="header-brand">
+        <h1>SIPERKA UBT</h1>
+        <p class="tagline">Sistem Pelaporan Kerusakan Fasilitas Kampus Universitas Borneo Tarakan</p>
+    </div>
+
+    <nav aria-label="Navigasi Utama" class="main-nav">
+        <ul>
         <li><a href="#alur-layanan">Alur Layanan</a></li>
         <li><a href="#form-lapor">Formulir Lapor</a></li>
         <li><a href="#bantuan">Pusat Bantuan</a></li>
-    </ul>
+        </ul>
     </nav>
+    </div>
 </header>
 
-<main id="konten-utama">
+<main id="konten-utama" class="container">
 
-    <!-- Section 1: Alur Layanan & Informasi -->
-    <section id="alur-layanan">
-    <h2>Alur Penanganan dan Kategori Fasilitas</h2>
-    <p>Layanan ini memfasilitasi mahasiswaa
-    , dosen, dan staf untuk melaporkan fasilitas gedung, laboratorium, maupun area terbuka yang membutuhkan perbaikan cepat.</p>
+    <section id="alur-layanan" class="section-block">
+    <div class="section-header">
+        <h2>Alur Penanganan dan Kategori Fasilitas</h2>
+        <p>Layanan ini memfasilitasi mahasiswa, dosen, dan staf untuk melaporkan fasilitas gedung, laboratorium, maupun area terbuka yang membutuhkan perbaikan cepat.</p>
+    </div>
 
-    <figure>
-        <img src="assets/images.jpg" alt="Gedung perkuliahan kampus Universitas Borneo Tarakan" width="600" height="300">
+    <figure class="hero-media">
+        <img src="Kampus-UBT-Pantai-Amal-17062026.webp" alt="Gedung perkuliahan kampus Universitas Borneo Tarakan" width="600" height="300">
     </figure>
 
-    <article>
+    <div class="cards-grid">
+        <article class="card">
         <h3>Tahapan Penanganan Aduan Kerusakan</h3>
         <ol>
-        <li><strong>Pelaporan Mandiri:</strong> Pengguna mengisi formulir data kerusakan beserta lokasi detail.</li>
-        <li><strong>Verifikasi Unit Kerja:</strong> Tim Sarana dan Prasarana melakukan verifikasi fisik dalam 1x24 jam kerja.</li>
-        <li><strong>Tindakan Perbaikan:</strong> Teknisi menangani kerusakan berdasarkan tingkat urgensi.</li>
-        <li><strong>Penyelesaian:</strong> Status pembaruan dikonfirmasi kepada pelapor melalui email.</li>
+            <li><strong>Pelaporan Mandiri:</strong> Pengguna mengisi formulir data kerusakan beserta lokasi detail.</li>
+            <li><strong>Verifikasi Unit Kerja:</strong> Tim Sarana dan Prasarana melakukan verifikasi fisik dalam 1x24 jam kerja.</li>
+            <li><strong>Tindakan Perbaikan:</strong> Teknisi menangani kerusakan berdasarkan tingkat urgensi.</li>
+            <li><strong>Penyelesaian:</strong> Status pembaruan dikonfirmasi kepada pelapor melalui email.</li>
         </ol>
-    </article>
+        </article>
 
-    <article>
+        <article class="card">
         <h3>Ruang Lingkup Fasilitas yang Ditangani</h3>
         <ul>
-        <li><strong>Fasilitas Ruang Kuliah:</strong> Pendingin ruangan (AC), proyektor, kursi perkuliahan, dan papan tulis.</li>
-        <li><strong>Infrastruktur Laboratorium:</strong> Kelistrikan, instalasi jaringan komputer, dan stopkontak.</li>
-        <li><strong>Fasilitas Umum & Sanitasi:</strong> Pintu, toilet, kran air, lampu lorong, dan area parkir.</li>
+            <li><strong>Fasilitas Ruang Kuliah:</strong> Pendingin ruangan (AC), proyektor, kursi perkuliahan, dan papan tulis.</li>
+            <li><strong>Infrastruktur Laboratorium:</strong> Kelistrikan, instalasi jaringan komputer, dan stopkontak.</li>
+            <li><strong>Fasilitas Umum & Sanitasi:</strong> Pintu, toilet, kran air, lampu lorong, dan area parkir.</li>
         </ul>
-    </article>
+        </article>
+
+        <article class="card">
+        <h3>Prioritas Tanggap Darurat</h3>
+        <p>Laporan yang berkaitan dengan risiko keselamatan seperti kebocoran bahan laboratorium dan korsleting gardu listrik akan ditangani dalam waktu kurang dari 2 jam kerja.</p>
+        </article>
+    </div>
     </section>
 
-    <!-- Section 2: Form Pelaporan -->
-    <section id="form-lapor">
+    <section id="form-lapor" class="section-block form-section">
     <h2>Formulir Pelaporan Kerusakan Fasilitas</h2>
     <p>Lengkapi data di bawah ini dengan valid agar tim teknisi dapat menemukan dan menindaklanjuti lokasi kerusakan secara presisi.</p>
 
-    <form action="#" method="post">
+    <form action="#" method="post" enctype="multipart/form-data" class="lapor-form">
         <fieldset>
         <legend>Identitas Pelapor</legend>
-
-        <p>
-            <label for="nama-pelapor">Nama Lengkap:</label><br>
+        <div class="form-grid">
+            <div class="form-group">
+            <label for="nama-pelapor">Nama Lengkap:</label>
             <input type="text" id="nama-pelapor" name="nama_pelapor" placeholder="Contoh: Rizki Ramadhan" required>
-        </p>
+            </div>
 
-        <p>
-            <label for="identitas-nomor">NPM: </label><br>
-            <input type="text" id="identitas-nomor" name="identitas_nomor" required>
-        </p>
+            <div class="form-group">
+            <label for="identitas-nomor">NPM:</label>
+            <input type="text" id="identitas-nomor" name="identitas_nomor" placeholder="Contoh: 2440302..." required>
+            </div>
 
-        <p>
-            <label for="email-pelapor">Email:</label><br>
-            <input type="email" id="email-pelapor" name="email_pelapor" required>
-        </p>
+            <div class="form-group form-span-full">
+            <label for="email-pelapor">Email Sivitas UBT:</label>
+            <input type="email" id="email-pelapor" name="email_pelapor" placeholder="nama@borneo.ac.id" required>
+            </div>
+        </div>
         </fieldset>
 
         <fieldset>
         <legend>Detail Kerusakan Fasilitas</legend>
-
-        <p>
-            <label for="kategori-fasilitas">Kategori Kerusakan:</label><br>
+        <div class="form-grid">
+            <div class="form-group">
+            <label for="kategori-fasilitas">Kategori Kerusakan:</label>
             <select id="kategori-fasilitas" name="kategori_fasilitas" required>
-            <option value="">-- Pilih Kategori --</option>
-            <option value="kelistrikan">Kelistrikan & Penerangan</option>
-            <option value="elektronik">Peralatan Elektronik (AC / Proyektor)</option>
-            <option value="furnitur">Furnitur (Meja / Kursi / Lemari)</option>
-            <option value="sanitasi">Sanitasi & Plumbing (Toilet / Air)</option>
-            <option value="jaringan">Infrastruktur Komputer / Jaringan</option>
+                <option value="">-- Pilih Kategori --</option>
+                <option value="kelistrikan">Kelistrikan & Penerangan</option>
+                <option value="elektronik">Peralatan Elektronik (AC / Proyektor)</option>
+                <option value="furnitur">Furnitur (Meja / Kursi / Lemari)</option>
+                <option value="sanitasi">Sanitasi & Plumbing (Toilet / Air)</option>
+                <option value="jaringan">Infrastruktur Komputer / Jaringan</option>
             </select>
-        </p>
+            </div>
 
-        <p>
-            <label for="lokasi-gedung">Lokasi Fasilitas (Gedung / Lantai / Ruangan):</label><br>
-            <input type="text" id="lokasi-gedung" name="lokasi_gedung" placeholder="Contoh: Gedung SBSN, Lab Komputer 1" required>
-        </p>
-
-        <p>
-            <label for="tanggal-ditemukan">Tanggal Ditemukan Kerusakan:</label><br>
-            <input type="date" id="tanggal-ditemukan" name="tanggal_ditemukan" required>
-        </p>
-
-        <p>
-            <label for="tingkat-urgensi">Tingkat Urgensi Kerusakan:</label><br>
+            <div class="form-group">
+            <label for="tingkat-urgensi">Tingkat Urgensi Kerusakan:</label>
             <select id="tingkat-urgensi" name="tingkat_urgensi" required>
-            <option value="rendah">Rendah (Kerusakan minor, tidak mengganggu KBM)</option>
-            <option value="sedang">Sedang (Sebagian aktivitas terhambat)</option>
-            <option value="tinggi">Tinggi (Kritis, ruang/alat tidak dapat digunakan)</option>
+                <option value="rendah">Rendah (Kerusakan minor, tidak mengganggu KBM)</option>
+                <option value="sedang">Sedang (Sebagian aktivitas terhambat)</option>
+                <option value="tinggi">Tinggi (Kritis, ruang/alat tidak dapat digunakan)</option>
             </select>
-        </p>
+            </div>
 
-        <p>
-            <label for="deskripsi-laporan">Uraian Masalah dan Ciri Kerusakan:</label><br>
-            <textarea id="deskripsi-laporan" name="deskripsi_laporan" rows="5" cols="45" placeholder="Jelaskan kondisi alat/fasilitas dan gejala yang teramati..." required></textarea>
-        </p>
+            <div class="form-group">
+            <label for="lokasi-gedung">Lokasi Fasilitas (Gedung / Lantai / Ruangan):</label>
+            <input type="text" id="lokasi-gedung" name="lokasi_gedung" placeholder="Contoh: Gedung SBSN, Lab Komputer 1" required>
+            </div>
+
+            <div class="form-group">
+            <label for="tanggal-ditemukan">Tanggal Ditemukan:</label>
+            <input type="date" id="tanggal-ditemukan" name="tanggal_ditemukan" required>
+            </div>
+
+            <div class="form-group form-span-full">
+            <label for="bukti-kerusakan">Unggah Foto / Video Bukti Kerusakan:</label>
+            <input type="file" id="bukti-kerusakan" name="bukti_kerusakan" accept="image/*,video/*" aria-describedby="petunjuk-file">
+            <small id="petunjuk-file" class="form-help">Format yang didukung: Foto (JPG, PNG, WebP) atau Video singkat (MP4, MOV). Maksimal 20 MB.</small>
+            </div>
+
+            <div class="form-group form-span-full">
+            <label for="deskripsi-laporan">Uraian Masalah dan Ciri Kerusakan:</label>
+            <textarea id="deskripsi-laporan" name="deskripsi_laporan" rows="4" placeholder="Jelaskan kondisi alat/fasilitas dan gejala yang teramati..." required></textarea>
+            </div>
+        </div>
         </fieldset>
 
-        <p>
-        <button type="submit">Kirim Laporan Kerusakan</button>
-        <button type="reset">Batal / Reset Form</button>
-        </p>
+        <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Kirim Laporan Kerusakan</button>
+        <button type="reset" class="btn btn-secondary">Batal / Reset Form</button>
+        </div>
     </form>
     </section>
 
-    <!-- Section 3: Pusat Bantuan & Kontak -->
-    <section id="bantuan">
+    <section id="bantuan" class="section-block assistance-section">
     <h2>Pusat Bantuan & Kontak Unit Sarpras</h2>
     <p>Jika menemukan kondisi darurat (kebocoran gas lab, korsleting listrik, atau genangan air pipa jebol), segera hubungi posko darurat:</p>
     
-    <address>
+    <address class="contact-box">
         <strong>Sub-Bagian Rumah Tangga dan Sarana Prasarana (Sarpras)</strong><br>
         Gedung Rektorat Lantai 1, Kampus Universitas Borneo Tarakan<br>
         Jl. Amal Lama No. 1, Kota Tarakan, Kalimantan Utara<br>
-        Telepon Layanan Darurat: (0551) 2052555<br>
-        Email Layanan: sarpras@borneo.ac.id
+        <span>Telepon Layanan Darurat: <strong>(0551) 2052555</strong></span><br>
+        <span>Email Layanan: <a href="mailto:sarpras@borneo.ac.id">sarpras@borneo.ac.id</a></span>
     </address>
     </section>
 
 </main>
 
-<!-- Footer -->
-<footer>
-    <hr>
+<footer class="site-footer">
+    <div class="container">
     <p>&copy; 2026 SIPERKA - Proyek Individu Praktikum Pemrograman Web (OBE). Jurusan Teknik Komputer, Fakultas Teknik, Universitas Borneo Tarakan.</p>
+    </div>
 </footer>
 
 </body>
