@@ -9,3 +9,15 @@ export function ringkasInventaris(data) {
         perluCek: data.filter(item => item.kondisi !== 'Baik').length
     };
 }
+
+export function cariAlatById(data, id) {
+    if (!Array.isArray(data)) {
+        throw new TypeError('Data harus berupa array');
+    }
+
+    return data.find(item => item.id === id);
+}
+
+export function formatRingkasanAlat({ nama, jumlah, kondisi, lokasi }) {
+    return `${nama} | Lokasi: ${lokasi} | Jumlah: ${jumlah} unit | Status: ${kondisi}`;
+}
