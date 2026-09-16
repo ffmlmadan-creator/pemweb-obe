@@ -88,6 +88,23 @@ gap: var(--space-md);
 align-items: flex-start;
 }
 
+.header-brand {
+display: flex;
+align-items: center;
+gap: 0.875rem;
+}
+
+.brand-logo {
+width: 52px;
+height: 52px;
+object-fit: contain;
+}
+
+.brand-text {
+display: flex;
+flex-direction: column;
+}
+
 .header-brand h1 {
 font-size: 1.6rem;
 color: var(--color-white);
