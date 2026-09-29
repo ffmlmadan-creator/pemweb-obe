@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Katalog Inventaris Sarana dan Prasarana Fasilitas Kampus Universitas Borneo Tarakan.">
+<title>Katalog Fasilitas - SIPERKA UBT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script type="module" src="js/inventaris.js"></script>
+</head>
+<body>
+
+<a href="#konten-utama" class="skip-link">Lewati ke konten utama</a>
+
+<header class="site-header">
+    <div class="container header-container">
+    <div class="header-brand">
+        <img src="LOGO-UNIVERSITAS-BORNEO-TARAKAN-UBT-PUTIH-scaled.webp" alt="Logo Universitas Borneo Tarakan" class="brand-logo">
+        <div class="brand-text">
+            <h1>SIPERKA UBT</h1>
+            <p class="tagline">Sistem Pelaporan Kerusakan Fasilitas Kampus Universitas Borneo Tarakan</p>
+        </div>
+    </div>
+
+    <div class="header-actions" style="display: flex; align-items: center; gap: 1rem;">
+        <nav aria-label="Navigasi Utama" class="main-nav">
+            <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="index.html#alur-layanan">Alur Layanan</a></li>
+            <li><a href="inventaris.html" class="active">Katalog Fasilitas</a></li>
+            <li><a href="index.html#form-lapor">Formulir Lapor</a></li>
+            <li><a href="index.html#bantuan">Pusat Bantuan</a></li>
+            </ul>
+        </nav>
+        <button id="theme-button" type="button" class="btn btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">Ganti Tema</button>
+    </div>
+    </div>
+</header>
+
+<main id="konten-utama" class="container">
+
+    <section class="section-block">
+        <div class="section-header">
+            <h2>Katalog Inventaris Fasilitas Kampus UBT</h2>
+            <p>Data monitoring dan rekapitulasi sarana prasarana penunjang akademik di seluruh gedung Universitas Borneo Tarakan.</p>
+        </div>
+
+        <div class="catalog-controls" style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+            <div style="flex: 1; min-width: 260px;">
+                <input type="text" id="input-cari" placeholder="Cari nama fasilitas, kategori, atau lokasi gedung..." style="width: 100%; padding: 0.65rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: 0.9rem;">
+            </div>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                <button type="button" class="btn btn-secondary" data-filter="Semua">Semua</button>
+                <button type="button" class="btn btn-secondary" data-filter="Baik">Kondisi Baik</button>
+                <button type="button" class="btn btn-secondary" data-filter="Perlu Cek">Perlu Cek</button>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <label for="pilih-limit" style="font-size: 0.85rem; font-weight: 600;">Tampilkan:</label>
+                <select id="pilih-limit" style="width: auto; padding: 0.45rem 0.8rem;">
+                    <option value="5">5 Baris</option>
+                    <option value="10">10 Baris</option>
+                    <option value="20">20 Baris</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="table-container" style="overflow-x: auto;">
+            <table class="siperka-table">
+                <thead>
+                    <tr>
+                        <th style="width: 50px;">No</th>
+                        <th>Nama Fasilitas / Alat</th>
+                        <th>Kategori</th>
+                        <th>Lokasi Gedung / Lab</th>
+                        <th>Kondisi</th>
+                        <th>Jumlah</th>
+                        <th style="text-align: center; width: 100px;">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="daftar-alat"></tbody>
+            </table>
+        </div>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+    <p>&copy; 2026 SIPERKA - Proyek Individu Praktikum Pemrograman Web (OBE). Jurusan Teknik Komputer, Fakultas Teknik, Universitas Borneo Tarakan.</p>
+    </div>
+</footer>
+
+</body>
+</html>

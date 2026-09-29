@@ -1,12 +1,12 @@
 import {
-hitungStatistikLaporan,
-filterLaporanByUrgensi,
-cariLaporanById,
-formatRingkasanLaporan
+  hitungStatistikLaporan,
+  filterLaporanByUrgensi,
+  cariLaporanById,
+  formatRingkasanLaporan
 } from './laporan-service.js';
 
 const daftarLaporanKerusakan = [
-{
+  {
     id: 101,
     namaPelapor: 'Rizki Ramadhan',
     npm: '2440302001',
@@ -15,8 +15,8 @@ const daftarLaporanKerusakan = [
     lokasiGedung: 'Gedung SBSN, Lab Komputer 1',
     tanggalDitemukan: '2026-09-18',
     status: 'Dalam Perbaikan'
-},
-{
+  },
+  {
     id: 102,
     namaPelapor: 'Ahmad Fauzi',
     npm: '2440302015',
@@ -25,8 +25,8 @@ const daftarLaporanKerusakan = [
     lokasiGedung: 'Gedung Rektorat Lt 2',
     tanggalDitemukan: '2026-09-19',
     status: 'Menunggu Verifikasi'
-},
-{
+  },
+  {
     id: 103,
     namaPelapor: 'Nurul Hidayah',
     npm: '2440302022',
@@ -35,8 +35,8 @@ const daftarLaporanKerusakan = [
     lokasiGedung: 'Gedung Dekanat FT',
     tanggalDitemukan: '2026-09-20',
     status: 'Selesai'
-},
-{
+  },
+  {
     id: 104,
     namaPelapor: 'Budi Santoso',
     npm: '2440302030',
@@ -45,29 +45,38 @@ const daftarLaporanKerusakan = [
     lokasiGedung: 'Lab Teknik Komputer',
     tanggalDitemukan: '2026-09-21',
     status: 'Dalam Perbaikan'
-}
+  }
 ];
 
-console.log('=== SEMUA DATA LAPORAN KERUSAKAN SIPERKA ===');
+console.log('=== DATA LAPORAN KERUSAKAN SIPERKA ===');
 console.table(daftarLaporanKerusakan);
 
 try {
-const statistik = hitungStatistikLaporan(daftarLaporanKerusakan);
-console.log('=== STATISTIK PENANGANAN KERUSAKAN ===');
-console.table(statistik);
+  const statistik = hitungStatistikLaporan(daftarLaporanKerusakan);
+  console.log('=== STATISTIK PENANGANAN ===');
+  console.table(statistik);
 
-const laporanDarurat = filterLaporanByUrgensi(daftarLaporanKerusakan, 'tinggi');
-console.log('=== LAPORAN PRIORITAS TINGGI / TANGGAP DARURAT ===');
-console.table(laporanDarurat);
+  const laporanDarurat = filterLaporanByUrgensi(daftarLaporanKerusakan, 'tinggi');
+  console.log('=== LAPORAN URGENSI TINGGI ===');
+  console.table(laporanDarurat);
 
-const cariTiket = cariLaporanById(daftarLaporanKerusakan, 999);
-console.log('=== PENCARIAN TIKET #101 ===');
-console.log(cariTiket);
-
-const ringkasanTeks = daftarLaporanKerusakan.map(formatRingkasanLaporan);
-console.log('=== DAFTAR RINGKASAN TIKET ADUAN ===');
-ringkasanTeks.forEach(teks => console.log(teks));
-
+  const tiket = cariLaporanById(daftarLaporanKerusakan, 101);
+  console.log('=== TIKET #101 ===', tiket);
 } catch (error) {
-console.error('Terjadi kesalahan saat memproses data:', error.message);
+  console.error('Terjadi kesalahan:', error.message);
 }
+
+const themeButton = document.querySelector('#theme-button');
+
+if (themeButton) {
+  const savedTheme = localStorage.getItem('siperka_theme') ?? 'light';
+  document.documentElement.dataset.theme = savedTheme;
+
+  themeButton.addEventListener('click', () => {
+    const currentTheme = document.documentElement.dataset.theme;
+    const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = nextTheme;
+    localStorage.setItem('siperka_theme', nextTheme);
+  });
+}
+

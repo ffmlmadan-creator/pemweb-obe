@@ -10,7 +10,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <script type="module" src="js/app.js"></script>
-
 </head>
 <body>
 
@@ -26,13 +25,17 @@
         </div>
     </div>
 
-    <nav aria-label="Navigasi Utama" class="main-nav">
-        <ul>
-        <li><a href="#alur-layanan">Alur Layanan</a></li>
-        <li><a href="#form-lapor">Formulir Lapor</a></li>
-        <li><a href="#bantuan">Pusat Bantuan</a></li>
-        </ul>
-    </nav>
+    <div class="header-actions" style="display: flex; align-items: center; gap: 1rem;">
+        <nav aria-label="Navigasi Utama" class="main-nav">
+            <ul>
+            <li><a href="#alur-layanan">Alur Layanan</a></li>
+            <li><a href="inventaris.html">Katalog Fasilitas</a></li>
+            <li><a href="#form-lapor">Formulir Lapor</a></li>
+            <li><a href="#bantuan">Pusat Bantuan</a></li>
+            </ul>
+        </nav>
+        <button id="theme-button" type="button" class="btn btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">Ganti Tema</button>
+    </div>
     </div>
 </header>
 
@@ -42,7 +45,10 @@
     <div class="hero-text">
         <h2 class="hero-heading">Layanan Cepat Tanggap Sarpras UBT</h2>
         <p class="hero-desc">Platform digital terpadu sivitas akademika Universitas Borneo Tarakan untuk melaporkan sarana dan prasarana kampus yang membutuhkan perbaikan.</p>
-        <a href="#form-lapor" class="btn btn-primary">Kirim Laporan Kerusakan</a>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="#form-lapor" class="btn btn-primary">Kirim Laporan Kerusakan</a>
+            <a href="inventaris.html" class="btn btn-secondary">Lihat Katalog Fasilitas</a>
+        </div>
     </div>
     <figure class="hero-media-box">
         <img src="Kampus-UBT-Pantai-Amal-17062026.webp" alt="Gedung Kampus Universitas Borneo Tarakan" class="hero-img">
@@ -87,15 +93,6 @@
         <h2>Formulir Pelaporan Kerusakan Fasilitas</h2>
         <p>Lengkapi formulir berikut secara valid agar teknisi dapat meninjau lokasi dengan tepat.</p>
     </div>
-
-    <section id="inventaris-kampus" class="section-block">
-    <div class="section-header">
-        <h2>Daftar Inventaris Fasilitas Kampus</h2>
-        <p>Monitoring kondisi sarana dan prasarana laboratorium dan ruang perkuliahan.</p>
-    </div>
-    
-    <div id="daftar-alat" class="cards-grid"></div>
-    </section>
 
     <form action="#" method="post" enctype="multipart/form-data" class="lapor-form">
         <fieldset>
