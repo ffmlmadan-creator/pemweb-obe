@@ -94,23 +94,26 @@
         <p>Lengkapi formulir berikut secara valid agar teknisi dapat meninjau lokasi dengan tepat.</p>
     </div>
 
-    <form action="#" method="post" enctype="multipart/form-data" class="lapor-form">
+<form id="lapor-form" action="#" method="post" enctype="multipart/form-data" class="lapor-form" novalidate>
         <fieldset>
         <legend>Identitas Pelapor</legend>
         <div class="form-grid">
             <div class="form-group">
             <label for="nama-pelapor">Nama Lengkap:</label>
-            <input type="text" id="nama-pelapor" name="nama_pelapor" placeholder="Contoh: Rizki Ramadhan" required>
+            <input type="text" id="nama-pelapor" name="nama_pelapor" placeholder="Contoh: Rizki Ramadhan" required minlength="3">
+            <span class="error-message" id="error-nama_pelapor" aria-live="polite"></span>
             </div>
 
             <div class="form-group">
             <label for="identitas-nomor">NPM:</label>
             <input type="text" id="identitas-nomor" name="identitas_nomor" placeholder="Contoh: 2440302..." required>
+            <span class="error-message" id="error-identitas_nomor" aria-live="polite"></span>
             </div>
 
             <div class="form-group form-span-full">
             <label for="email-pelapor">Email Sivitas UBT:</label>
             <input type="email" id="email-pelapor" name="email_pelapor" placeholder="nama@borneo.ac.id" required>
+            <span class="error-message" id="error-email_pelapor" aria-live="polite"></span>
             </div>
         </div>
         </fieldset>
@@ -128,36 +131,47 @@
                 <option value="sanitasi">Sanitasi & Plumbing (Toilet / Air)</option>
                 <option value="jaringan">Infrastruktur Komputer / Jaringan</option>
             </select>
+            <span class="error-message" id="error-kategori_fasilitas" aria-live="polite"></span>
             </div>
 
             <div class="form-group">
             <label for="tingkat-urgensi">Tingkat Urgensi Kerusakan:</label>
             <select id="tingkat-urgensi" name="tingkat_urgensi" required>
+                <option value="">-- Pilih Urgensi --</option>
                 <option value="rendah">Rendah (Kerusakan minor, KBM tetap jalan)</option>
                 <option value="sedang">Sedang (Sebagian aktivitas perkuliahan terhambat)</option>
                 <option value="tinggi">Tinggi (Kritis, fasilitas tidak dapat dipakai)</option>
             </select>
+            <span class="error-message" id="error-tingkat_urgensi" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+            <label for="jumlah-fasilitas">Jumlah Fasilitas Rusak:</label>
+            <input type="number" id="jumlah-fasilitas" name="jumlah_fasilitas" placeholder="Contoh: 2" required min="1">
+            <span class="error-message" id="error-jumlah_fasilitas" aria-live="polite"></span>
             </div>
 
             <div class="form-group">
             <label for="lokasi-gedung">Lokasi Fasilitas (Gedung / Lantai / Ruang):</label>
             <input type="text" id="lokasi-gedung" name="lokasi_gedung" placeholder="Contoh: Gedung SBSN, Lab Komputer 1" required>
+            <span class="error-message" id="error-lokasi_gedung" aria-live="polite"></span>
             </div>
 
             <div class="form-group">
             <label for="tanggal-ditemukan">Tanggal Ditemukan:</label>
             <input type="date" id="tanggal-ditemukan" name="tanggal_ditemukan" required>
+            <span class="error-message" id="error-tanggal_ditemukan" aria-live="polite"></span>
             </div>
 
             <div class="form-group form-span-full">
-            <label for="bukti-kerusakan">Unggah Bukti Foto / Video Kerusakan:</label>
-            <input type="file" id="bukti-kerusakan" name="bukti_kerusakan" accept="image/*,video/*" aria-describedby="petunjuk-file">
-            <small id="petunjuk-file" class="form-help">Format: Foto (JPG, PNG, WebP) atau Video (MP4, MOV). Maksimal 20 MB.</small>
+            <label for="bukti-kerusakan">Unggah Bukti Foto (Opsional):</label>
+            <input type="file" id="bukti-kerusakan" name="bukti_kerusakan" accept="image/*,video/*">
             </div>
 
             <div class="form-group form-span-full">
             <label for="deskripsi-laporan">Uraian Masalah dan Ciri Kerusakan:</label>
-            <textarea id="deskripsi-laporan" name="deskripsi_laporan" rows="4" placeholder="Jelaskan kondisi alat dan ciri kerusakan yang teramati..." required></textarea>
+            <textarea id="deskripsi-laporan" name="deskripsi_laporan" rows="4" placeholder="Jelaskan kondisi alat..." required></textarea>
+            <span class="error-message" id="error-deskripsi_laporan" aria-live="polite"></span>
             </div>
         </div>
         </fieldset>
@@ -165,6 +179,13 @@
         <div class="form-actions">
         <button type="submit" class="btn btn-primary">Kirim Laporan Kerusakan</button>
         <button type="reset" class="btn btn-secondary">Batal / Reset Form</button>
+        </div>
+        
+        <!-- Status & Preview Area -->
+        <p id="form-status" style="margin-top: 15px; font-weight: 600;"></p>
+        <div id="preview-data" class="preview-area" style="display: none; margin-top: 20px; padding: 15px; border: 1px solid var(--color-border); border-radius: var(--radius); background-color: var(--color-bg);">
+            <h3 style="margin-bottom: 10px;">Pratinjau Data Laporan</h3>
+            <ul id="preview-list" style="list-style: none; padding-left: 0;"></ul>
         </div>
     </form>
     </section>

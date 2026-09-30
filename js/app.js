@@ -79,4 +79,92 @@ if (themeButton) {
     localStorage.setItem('siperka_theme', nextTheme);
   });
 }
+const formLapor = document.querySelector('#lapor-form');
+const statusForm = document.querySelector('#form-status');
+const previewData = document.querySelector('#preview-data');
+const previewList = document.querySelector('#preview-list');
 
+const kategoriValid = ['kelistrikan', 'elektronik', 'furnitur', 'sanitasi', 'jaringan'];
+
+function validateForm(data) {
+    const errors = {};
+    
+    const nama = String(data.get('nama_pelapor') || '').trim();
+    const kategori = String(data.get('kategori_fasilitas') || '').trim();
+    const jumlah = Number(data.get('jumlah_fasilitas'));
+    const tanggal = String(data.get('tanggal_ditemukan') || '').trim();
+    
+    if (!nama) {
+        errors.nama_pelapor = 'Nama pelapor wajib diisi.';
+    } else if (nama.length < 3) {
+        errors.nama_pelapor = 'Nama pelapor minimal 3 karakter.';
+    }
+
+    if (!kategori) {
+        errors.kategori_fasilitas = 'Kategori kerusakan wajib dipilih.';
+    } else if (!kategoriValid.includes(kategori)) {
+        errors.kategori_fasilitas = 'Kategori yang dipilih tidak valid dari sistem.';
+    }
+
+    if (!data.get('jumlah_fasilitas')) {
+        errors.jumlah_fasilitas = 'Jumlah fasilitas rusak wajib diisi.';
+    } else if (!Number.isInteger(jumlah) || jumlah < 1) {
+        errors.jumlah_fasilitas = 'Jumlah harus berupa bilangan bulat minimal 1.';
+    }
+
+    if (!tanggal) {
+        errors.tanggal_ditemukan = 'Tanggal ditemukan wajib diisi.';
+    } else {
+        const tglInput = new Date(tanggal);
+        const tglHariIni = new Date();
+        tglHariIni.setHours(0, 0, 0, 0);
+        if (tglInput > tglHariIni) {
+            errors.tanggal_ditemukan = 'Tanggal pelaporan tidak boleh melebihi hari ini.';
+        }
+    }
+
+    return errors;
+}
+
+if (formLapor) {
+    formLapor.addEventListener('submit', event => {
+        event.preventDefault();
+        
+        const data = new FormData(formLapor);
+        const errors = validateForm(data);
+
+        document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+        formLapor.querySelectorAll('[aria-invalid="true"]').forEach(el => el.removeAttribute('aria-invalid'));
+        previewData.style.display = 'none';
+
+        if (Object.keys(errors).length > 0) {
+            for (const [field, message] of Object.entries(errors)) {
+                const errorSpan = document.querySelector(`#error-${field}`);
+                if (errorSpan) errorSpan.textContent = message;
+                
+                const inputEl = formLapor.elements[field];
+                if (inputEl) inputEl.setAttribute('aria-invalid', 'true');
+            }
+            
+            const firstErrorField = Object.keys(errors)[0];
+            formLapor.elements[firstErrorField]?.focus();
+            
+            statusForm.style.color = 'var(--color-primary)';
+            statusForm.textContent = ' Laporan gagal diproses. Periksa kembali data yang berwarna merah.';
+        } else {
+            statusForm.style.color = '#15803d';
+            statusForm.textContent = ' Data valid! Berikut pratinjau data (Belum dikirim ke server).';
+            
+            previewList.innerHTML = '';
+            for (const [key, value] of data.entries()) {
+                if(key === 'bukti_kerusakan' || value === '') continue; 
+                
+                const label = key.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase());
+                const li = document.createElement('li');
+                li.innerHTML = `<strong>${label}:</strong> ${value}`;
+                previewList.appendChild(li);
+            }
+            previewData.style.display = 'block';
+        }
+    });
+}
